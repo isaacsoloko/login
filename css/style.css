@@ -3,9 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url("Montserrat-Regular.ttf");
+}
 body{
     width: 100%;
-    font-family: 'Apple Color Emoji', 'Segoe UI Emoji' , 'Segoe UI Symbol', 'Noto Color Emoji';
+    font-family: 'Montserrat-Regular';
 }
 .container{
     width: 90%;
@@ -32,7 +36,7 @@ input{
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-family: 'Apple Color Emoji', 'Segoe UI Emoji' , 'Segoe UI Symbol', 'Noto Color Emoji';
+    font-family: 'Montserrat-Regular';
     font-size: 15px;
 }
 .primary-btn, .second-btn {
