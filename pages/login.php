@@ -1,15 +1,24 @@
 <?php
     session_start();
-    if (!empty($_SESSION['user']) && !empty($_SESSION['password'])) {
+    //On empêche à l'utilisateur de revenir sur login en etant déjà connecté
+    if (!empty($_SESSION['user'])) {
         header('Location:profile.php');
     }
+    //Si le bouton Se connecter est déclenché
     if (isset($_POST['login'])) {
-        $user = trim($_POST['user']);
-        $password = trim($_POST['password']);
-        if (!empty($user) && !empty($password)) {
-            $_SESSION['user'] = $user;
-            $_SESSION['password'] = $password;
-            header('Location:profile.php');
+        //On vérifie si l'utilisateur tente de se connecter sans être enregistré au préalable 
+        if (!empty($_SESSION['fullname']) && !empty($_SESSION['email'])) {
+            $user = trim($_POST['user']);
+            $password = trim($_POST['password']);
+            //On vérifie si les données saisies ne sont pas vide
+            if (!empty($user) && !empty($password)) {
+                $_SESSION['user'] = $user;
+                $_SESSION['password'] = $password;
+                header('Location:profile.php');
+            }
+        }
+        else{
+            header('Location:register.php');
         }
     }
 ?>

@@ -1,10 +1,13 @@
 <?php
     session_start();
-    if (empty($_SESSION['user']) || empty($_SESSION['password'])) {
+    //On vérifie si l'utilisateur ne s'est pas encore enregistré ni connecté
+    if (empty($_SESSION['user']) || empty($_SESSION['password']) || 
+        empty($_SESSION['fullname']) || empty($_SESSION['email'])) {
         header('Location:login.php');
     }
     if (isset($_POST['deconnexion'])) {
-        session_destroy();
+        unset($_SESSION['user']);
+        unset($_SESSION['password']);
         header('Location:login.php');
     }
 ?>

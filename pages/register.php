@@ -1,6 +1,7 @@
 <?php
     session_start();
-    if (!empty($_SESSION['user']) && !empty($_SESSION['password'])) {
+    //On vérifie si l'utilisateur connecté ou enregistré tente d'y revenir
+    if (!empty($_SESSION['user'])) {
         header('Location:profile.php');
     }
     if (isset($_POST['register'])) {

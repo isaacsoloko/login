@@ -9,11 +9,11 @@
 }
 body{
     width: 100%;
+    height: 100vh;
     font-family: 'Montserrat-Regular';
 }
 .container{
     width: 90%;
-    height: 100vh;
     margin: 0 auto;
     display: flex;
     gap: 20px;
